@@ -4,33 +4,33 @@
 int main() {
 	network nw;
 	// add three users
-	nw.add_user(profile{"mario", "Mario"});
-	nw.add_user(profile{"luigi", "Luigi"});
-	nw.add_user(profile{"yoshi", "Yoshi"});
+	nw.add_user(profile{"mario"s, "Mario"s});
+	nw.add_user(profile{"luigi"s, "Luigi"s});
+	nw.add_user(profile{"yoshi"s, "Yoshi"s});
 
-	nw.follow("mario", "luigi");
-	nw.follow("luigi", "mario");
-	nw.follow("luigi", "yoshi");
-	nw.follow("yoshi", "mario");
+	nw.follow("mario"s, "luigi"s);
+	nw.follow("luigi"s, "mario"s);
+	nw.follow("luigi"s, "yoshi"s);
+	nw.follow("yoshi"s, "mario"s);
 
 	// write some posts
-	nw.write_post("mario", "It's a-me, Mario!");
-	nw.write_post("luigi", "Hey hey!");
-	nw.write_post("mario", "Hi Luigi!");
-	nw.write_post("yoshi", "Test 1");
-	nw.write_post("yoshi", "Test 2");
-	nw.write_post("luigi", "I just hope this crazy plan of yours works!");
-	nw.write_post("mario", "My crazy plans always work!");
-	nw.write_post("yoshi", "Test 3");
-	nw.write_post("yoshi", "Test 4");
-	nw.write_post("yoshi", "Test 5");
+	nw.write_post("mario"s, "It's a-me, Mario!"s);
+	nw.write_post("luigi"s, "Hey hey!"s);
+	nw.write_post("mario"s, "Hi Luigi!"s);
+	nw.write_post("yoshi"s, "Test 1"s);
+	nw.write_post("yoshi"s, "Test 2"s);
+	nw.write_post("luigi"s, "I just hope this crazy plan of yours works!"s);
+	nw.write_post("mario"s, "My crazy plans always work!"s);
+	nw.write_post("yoshi"s, "Test 3"s);
+	nw.write_post("yoshi"s, "Test 4"s);
+	nw.write_post("yoshi"s, "Test 5"s);
 
 	std::cout << '\n';
-	std::cout << "======= Mario's timeline =======" << '\n';
-	nw.print_timeline(std::cout, "mario");
+	std::cout << "======= Mario's timeline ======="s << '\n';
+	nw.print_timeline(std::cout, "mario"s);
 	std::cout << '\n';
 
-	std::cout << "======= Yoshi's timeline =======" << '\n';
-	nw.print_timeline(std::cout, "yoshi");
+	std::cout << "======= Yoshi's timeline ======="s << '\n';
+	nw.print_timeline(std::cout, "yoshi"s);
 	std::cout << '\n';
 }

@@ -56,7 +56,7 @@ bool network::follow(std::string const& usrn1, std::string const& usrn2) {
 void network::print_dot(std::ostream& os) {
 	os << "digraph {\n";
 	for (auto&& profile : profiles_) {
-		os << "\t\"@" << profile.username() << "\"\n";
+		os << "\t\"@"s << profile.username() << "\"\n";
 	}
 	os << '\n';
 
@@ -64,10 +64,10 @@ void network::print_dot(std::ostream& os) {
 		auto&& profile = profiles_[i];
 		auto&& followees = following_[i];
 		for (auto&& edge : followees) {
-			os << "\t\"@" << profile.username() << "\" -> \"@" << profiles_[edge].username() << "\"\n";
+			os << "\t\"@"s << profile.username() << "\"s -> \"@"s << profiles_[edge].username() << "\"\n";
 		}
 	}
-	os << "}\n";
+	os << "s}\n";
 }
 
 bool network::write_post(std::string const& usrn, std::string msg) {
@@ -99,7 +99,7 @@ bool network::print_timeline(std::ostream& os, std::string const& usrn) {
 			continue;
 		}
 
-		os << profiles_[post_id].full_name() << ". " << post_text << '\n';
+		os << profiles_[post_id].full_name() << ". "s << post_text << '\n';
 	}
 
 	return true;
